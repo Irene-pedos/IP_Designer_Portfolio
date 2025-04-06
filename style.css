@@ -1,0 +1,571 @@
+/* Root Variables */
+:root {
+  --dl-space-space-unit: 16px;
+  --dl-space-space-halfunit: 8px;
+  --dl-space-space-oneandhalfunits: 24px;
+  --dl-space-space-threeunits: 48px;
+  --dl-color-theme-neutral-dark: #191818;
+  --dl-color-theme-neutral-light: #FBFAF9;
+  --dl-color-theme-accent1: #01C38E;
+  --dl-color-theme-primary1: #6127FE;
+  --dl-radius-radius-buttonradius: 13px;
+  --dl-radius-radius-imageradius: 20px;
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgba(19, 13, 41, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .indexdarkmode-nav-bar {
+  background-color: #1e1e1e;
+}
+
+.indexdarkmode-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navigation Bar */
+.indexdarkmode-nav {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--dl-space-space-unit);
+  background-color: rgba(19, 13, 41, 1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.indexdarkmode-nav-icons {
+  display: flex;
+  gap: var(--dl-space-space-unit);
+}
+
+.indexdarkmode-nav-icons a {
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.indexdarkmode-lightand-darkmodetab {
+  display: flex;
+  align-items: center;
+  gap: var(--dl-space-space-halfunit);
+  cursor: pointer;
+}
+
+.indexdarkmode-group53 {
+  display: flex;
+  align-items: center;
+  gap: var(--dl-space-space-halfunit);
+}
+
+.indexdarkmode-ellipse21 {
+  width: 16px;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+}
+
+.indexdarkmode-sun,
+.indexdarkmode-moon {
+  width: 16px;
+  height: 16px;
+}
+
+.indexdarkmode-ip-dlogoonly12 {
+  display: flex;
+  align-items: center;
+  gap: var(--dl-space-space-halfunit);
+}
+
+.indexdarkmode-vector28,
+.indexdarkmode-vector29 {
+  width: 48px;
+  height: 48px;
+}
+
+/* Introduction Section */
+.indexdarkmode-group59 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 var(--dl-space-space-unit);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--dl-space-space-threeunits);
+}
+
+.indexdarkmode-introduction {
+  flex: 1;
+  max-width: 600px;
+}
+
+.indexdarkmode-me h1 {
+  color: rgba(255, 255, 255, 1);
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.indexdarkmode-me h3 {
+  color: rgba(1, 195, 142, 1);
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: var(--dl-space-space-halfunit);
+}
+
+.indexdarkmode-me p {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: var(--dl-space-space-unit);
+}
+
+.indexdarkmode-line3 {
+  width: 228px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 1);
+  margin-top: var(--dl-space-space-unit);
+}
+
+/* Buttons */
+.indexdarkmode-frame13 {
+  display: flex;
+  gap: var(--dl-space-space-unit);
+  margin-top: var(--dl-space-space-threeunits);
+}
+
+.indexdarkmode-contactbutton1,
+.indexdarkmode-contactbutton2 {
+  padding: var(--dl-space-space-halfunit) var(--dl-space-space-unit);
+  background-color: rgba(97, 39, 254, 1);
+  border-radius: var(--dl-radius-radius-buttonradius);
+  color: rgba(255, 255, 255, 1);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.indexdarkmode-contactbutton1:hover,
+.indexdarkmode-contactbutton2:hover {
+  background-color: #4a1fc7; /* Slightly darker shade for hover */
+}
+
+/* Contact Info */
+.indexdarkmode-contactinfo {
+  margin-top: var(--dl-space-space-threeunits);
+}
+
+.indexdarkmode-contactinfo table {
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Remove spacing between cells */
+}
+
+.indexdarkmode-contactinfo th {
+  font-size: 16px; /* Larger font size for headers */
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  padding-bottom: var(--dl-space-space-halfunit); /* Space below headers */
+  text-align: left; /* Align headers to the left */
+}
+
+.indexdarkmode-contactinfo td {
+  font-size: 14px; /* Smaller font size for content */
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  padding: var(--dl-space-space-halfunit) 0; /* Padding for content */
+}
+
+/* Remove table borders and spacing */
+.indexdarkmode-contactinfo table,
+.indexdarkmode-contactinfo th,
+.indexdarkmode-contactinfo td {
+  border: none; /* Remove borders */
+}
+
+/* User Picture */
+.indexdarkmode-userpic {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexdarkmode-passporttransparent1 {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  border-radius: var(--dl-radius-radius-imageradius);
+}
+
+/* About Me Section */
+.indexdarkmode-aboutmepage {
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(97, 39, 254, 1);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.indexdarkmode-aboutme1 {
+  max-width: 600px;
+}
+
+.indexdarkmode-aboutmepic {
+  max-width: 500px;
+}
+
+.indexdarkmode-passporttransparent2 {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.indexdarkmode-aboutme2 h2 {
+  color: rgba(255, 255, 255, 1);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.indexdarkmode-aboutme2 p {
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.indexdarkmode-rating {
+  margin-top: 40px;
+  display: flex;
+  gap: 40px;
+}
+
+.indexdarkmode-rating p {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+
+.indexdarkmode-group19 {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.indexdarkmode-group19 p {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+
+.indexdarkmode-arrowrightnormal1 {
+  width: 35px;
+  height: 35px;
+}
+
+/* Services Section */
+.indexdarkmode-service-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.indexdarkmode-servicetitle {
+  text-align: center;
+}
+
+.indexdarkmode-servicetitle h2 {
+  color: rgba(255, 255, 255, 1);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.indexdarkmode-servicetitle p {
+  color: rgba(1, 195, 142, 1);
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.indexdarkmode-best-services {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.indexdarkmode-group27,
+.indexdarkmode-group25,
+.indexdarkmode-group24,
+.indexdarkmode-group26 {
+  flex: 1;
+  background-color: rgba(53, 57, 67, 1);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.indexdarkmode-group27 h3,
+.indexdarkmode-group25 h3,
+.indexdarkmode-group24 h3,
+.indexdarkmode-group26 h3 {
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.indexdarkmode-group27 p,
+.indexdarkmode-group25 p,
+.indexdarkmode-group24 p,
+.indexdarkmode-group26 p {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.indexdarkmode-moreservices {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.indexdarkmode-moreservices p {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+
+.indexdarkmode-arrowrightnormal3 {
+  width: 35px;
+  height: 35px;
+}
+
+/* Portfolio Section */
+.indexdarkmode-portfoliopage {
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.indexdarkmode-portfoliopage h2 {
+  color: rgba(255, 255, 255, 1);
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.indexdarkmode-rectangle14,
+.indexdarkmode-rectangle15,
+.indexdarkmode-rectangle16,
+.indexdarkmode-rectangle17 {
+  width: 100%;
+  max-width: 280px;
+  height: 300px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.indexdarkmode-group20 {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.indexdarkmode-group20 p {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+
+.indexdarkmode-arrowrightnormal2 {
+  width: 35px;
+  height: 35px;
+}
+
+/* Contact Section */
+.indexdarkmode-group61 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.indexdarkmode-contactpage {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.indexdarkmode-contactdescription {
+  max-width: 500px;
+}
+
+.indexdarkmode-contactdescription h2 {
+  color: rgba(1, 195, 142, 1);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.indexdarkmode-contactdescription p {
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.indexdarkmode-form-contact {
+  flex: 1;
+  background-color: rgba(53, 57, 67, 1);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.indexdarkmode-input-field1,
+.indexdarkmode-input-field2,
+.indexdarkmode-input-field3,
+.indexdarkmode-textarea-field {
+  margin-bottom: 20px;
+}
+
+.indexdarkmode-input-field1 input,
+.indexdarkmode-input-field2 input,
+.indexdarkmode-input-field3 input,
+.indexdarkmode-textarea-field textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(217, 217, 217, 1);
+  background-color: transparent;
+  color: rgba(255, 255, 255, 1);
+}
+
+.indexdarkmode-button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(97, 39, 254, 1);
+  border-radius: 13px;
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+}
+
+.indexdarkmode-contactdetails {
+  max-width: 500px;
+  background-color: rgba(97, 39, 254, 1);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.indexdarkmode-contactdetails h3 {
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.indexdarkmode-contactdetails p {
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* Footer Section */
+.indexdarkmode-footer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto 0;
+  padding: 40px 20px;
+  background-color: rgba(10, 7, 22, 1);
+  text-align: center;
+}
+
+.indexdarkmode-footer h3 {
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.indexdarkmode-footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.indexdarkmode-footer ul li {
+  margin-bottom: 10px;
+}
+
+.indexdarkmode-footer ul li a {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.indexdarkmode-footer ul li a:hover {
+  color: rgba(1, 195, 142, 1);
+}
+
+.indexdarkmode-footer-bottom {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.indexdarkmode-footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.indexdarkmode-footer-legal {
+  text-align: right;
+}
+
+.indexdarkmode-footer-legal p {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+
+.indexdarkmode-footer-legal a {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+.indexdarkmode-footer-legal a:hover {
+  color: rgba(1, 195, 142, 1);
+}

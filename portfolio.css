@@ -1,0 +1,398 @@
+/* Loading Bar Styles */
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.loading-progress {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #6127FE, #01C38E);
+  transition: width 0.4s ease;
+  animation: loadingAnimation 2s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+
+  50% {
+    width: 100%;
+    left: 0;
+  }
+
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}
+
+/* Back button without bottom hover effect */
+.back-button {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Removed the ::before pseudo-element that created the underline */
+}
+
+.back-button:hover {
+  transform: translateX(-5px);
+  /* Removed the opacity change to keep the color consistent */
+}
+
+/* The rest of your animations remain unchanged */
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgba(19, 13, 41, 1);
+  /* Dark background */
+  color: rgba(255, 255, 255, 1);
+  /* White text */
+  margin: 0;
+  padding: 0;
+}
+
+/* Back Button */
+.back-button-container {
+  padding: 20px;
+  text-align: left;
+}
+
+.back-button {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  /* Green text */
+  font-size: 14px;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.back-button:hover {
+  opacity: 0.8;
+}
+
+.back-button i {
+  font-size: 15px;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.portfolio-container {
+  text-align: center;
+}
+
+.portfolio-container h2 {
+  color: rgba(255, 255, 255, 1);
+  /* White text */
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-container p {
+  color: rgba(255, 255, 255, 0.8);
+  /* Light gray text */
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.filter-button {
+  background-color: rgba(53, 57, 67, 1);
+  /* Dark button background */
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-button.active {
+  background-color: rgba(1, 195, 142, 1);
+  /* Green for active button */
+}
+
+.filter-button:hover {
+  background-color: rgba(1, 195, 142, 0.8);
+  /* Lighter green on hover */
+}
+
+/* Main Projects Grid */
+.main-projects-grid {
+  display: none;
+  /* Hidden by default */
+  margin-top: 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 projects per column */
+  gap: 20px;
+}
+
+.project-card {
+  position: relative;
+  background-color: transparent;
+  /* Remove background color */
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+  width: 100%;       /* Fill container width */
+  height: 300px;     /* Fixed height (adjust as needed) */
+  object-fit: cover;  /* Crop to fill space (no distortion) */
+  object-position: center; /* Focus on the center of the image */
+  display: block;    /* Remove extra space below */
+  border-radius: 20px; /* Match card radius */
+}
+
+/* Project Overlay (Only for "All" filter) */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  /* Dark overlay */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 20px;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay h3 {
+  font-size: 18px;
+  /* Smaller font size */
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.project-overlay p {
+  font-size: 14px;
+  /* Smaller font size */
+  font-weight: 400;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.page-button {
+  background-color: rgba(53, 57, 67, 1);
+  /* Dark button background */
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.page-button.active {
+  background-color: rgba(1, 195, 142, 1);
+  /* Green for active button */
+}
+
+.page-button:hover {
+  background-color: rgba(1, 195, 142, 0.8);
+  /* Lighter green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns for smaller tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    /* 1 column for mobile */
+  }
+}
+
+/* ======================
+   PORTFOLIO LIGHT MODE STYLES
+   ====================== */
+.light-mode {
+  background-color: var(--dl-color-theme-neutral-light);
+  /* #f8f9fa */
+  color: var(--dl-color-theme-neutral-dark);
+  /* #333333 */
+}
+
+/* Back Button */
+.light-mode .back-button {
+  color: var(--dl-color-theme-neutral-dark);
+}
+
+.light-mode .back-button:hover {
+  color: var(--dl-color-theme-accent1);
+  /* #01C38E */
+}
+
+/* Portfolio Header */
+.light-mode .portfolio-container h2 {
+  color: var(--dl-color-theme-neutral-dark);
+}
+
+.light-mode .portfolio-container p {
+  color: #555555;
+}
+
+/* Filter Buttons - Enhanced Visibility */
+.light-mode .filter-button {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--dl-color-theme-neutral-dark);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.light-mode .filter-button.active,
+.light-mode .filter-button:hover {
+  background-color: #6127FE;
+  /* #01C38E */
+  color: white;
+  border-color: var(--dl-color-theme-accent1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(1, 195, 142, 0.2);
+}
+
+/* Project Cards */
+.light-mode .project-card {
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.light-mode .project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.068);
+}
+
+.light-mode .project-overlay {
+  background: #6027feb0;
+  color: #fff;
+}
+
+.light-mode .project-overlay h3 {
+  color: #fff;
+  /* #6127FE */
+}
+
+.light-mode .project-overlay p {
+  color: #fff;
+}
+
+/* Pagination Buttons - Enhanced Visibility */
+.light-mode .page-button {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--dl-color-theme-neutral-dark);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.light-mode .page-button.active,
+.light-mode .page-button:hover {
+  background-color: var(--dl-color-theme-accent1);
+  /* #01C38E */
+  color: #6127FE;
+  border-color: var(--dl-color-theme-accent1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(1, 195, 142, 0.2);
+}
+
+/* Loading Bar - Consistent with Index */
+.light-mode .loading-bar {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .loading-progress {
+  background: linear-gradient(90deg,
+      var(--dl-color-theme-primary1),
+      var(--dl-color-theme-accent1));
+}
+
+/* More Projects Button - Matching Index Style */
+.light-mode .more-projects-button {
+  background-color: var(--dl-color-theme-accent1);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.light-mode .more-projects-button:hover {
+  background-color: #00b383;
+  /* Slightly darker green */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(1, 195, 142, 0.3);
+}
+
+/* Loading Bar (Consistent with other pages) */
+.light-mode .loading-bar {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .loading-progress {
+  background: linear-gradient(90deg, #6127FE, #01C38E);
+}

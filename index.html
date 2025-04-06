@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IP Designer</title>
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+  <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="IP Designer" />
+  <link rel="manifest" href="/site.webmanifest" />
+</head>
+
+<body class="dark-mode">
+  <script src="theme-toggle.js"></script>
+  <div class="loading-bar">
+    <div class="loading-progress"></div>
+  </div>
+  <div class="indexdarkmode-container">
+    <header class="indexdarkmode-nav">
+      <nav class="indexdarkmode-nav-bar">
+        <div class="hamburger-menu">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <!-- Logo on the Left -->
+        <div class="indexdarkmode-logo">
+          <img src="/Images/IPD logo white.svg" alt="Logo" class="logo-dark" />
+          <img src="/Images/IPD logo blue.svg" alt="Logo" class="logo-light" />
+        </div>
+
+        <!-- Navigation Links Centered -->
+        <div class="indexdarkmode-nav-links">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Dark Mode Toggle on the Right -->
+        <div class="indexdarkmode-darkmode-toggle">
+          <button aria-label="Toggle Dark Mode" class="indexdarkmode-toggle-button" id="darkModeToggle">
+            <span class="indexdarkmode-toggle-circle"></span>
+            <i class="fas fa-sun indexdarkmode-sun-icon"></i>
+            <i class="fas fa-moon indexdarkmode-moon-icon"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Introduction Section -->
+      <section id="home" class="indexdarkmode-intro-section">
+        <div class="indexdarkmode-intro-content">
+          <!-- Left Side: Text Content -->
+          <div class="indexdarkmode-intro-text">
+            <h3>HELLO, I’M</h3>
+            <h1>IRENE PEDOS</h1>
+            <p class="intro-subtitle">Graphic Designer & Web Developer</p>
+            <p class="intro-description">
+              I specialize in graphic design and web development, creating eye-catching visuals and user-friendly
+              websites. My goal is to help businesses and individuals stand out with unique designs and modern websites.
+              Whether it’s branding, UI/UX, or video editing, I bring creativity and functionality together to deliver
+              the best results.
+            </p>
+            <div class="indexdarkmode-intro-buttons">
+              <a href="#contact" class="indexdarkmode-contact-button">Contact me</a>
+              <a href="mailto:ishimwepedos@gmail.com?subject=Contact%20Request&body=Hello%20there,%20I%20would%20like%20to%20get%20in%20touch%20with%20you."
+                class="indexdarkmode-hire-button" target="_blank" rel="noopener noreferrer">Hire me</a>
+            </div>
+            <div class="indexdarkmode-contact-info">
+              <div class="contact-item">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">ishimwepedos@gmail.com</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">(+250) 797785430</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Huye, Rwanda</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: Image -->
+          <div class="indexdarkmode-intro-image">
+            <img src="public/external/passporttransparent1286-iesi-600h.png" alt="Irene Pedos" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services-section">
+        <div class="services-title">
+          <h2>Services</h2>
+          <p>My Services</p>
+        </div>
+        <div class="services-grid">
+          <!-- Web Development -->
+          <div class="service-card">
+            <img src="public/external/webdevelopmentsvgrepocom13998-1lej.svg" alt="Web Development Icon"
+              class="service-icon" />
+            <h3>Web Development</h3>
+            <p>Custom websites built with responsive design and clean code. I create user-friendly digital experiences
+              that look great on all devices.</p>
+          </div>
+
+          <!-- Video Editing -->
+          <div class="service-card">
+            <img src="public/external/videoeditingsvgrepocom14111-xi9j.svg" alt="Video Editing Icon"
+              class="service-icon" />
+            <h3>Video Editing</h3>
+            <p>Professional video content that tells your story. From concept to final cut, I create engaging visual
+              narratives.</p>
+          </div>
+
+          <!-- Flyer & Poster Design -->
+          <div class="service-card">
+            <img src="public/external/designercompositionprofessiondesignsvgrepocom14113-vy2a.svg" alt="Design Icon"
+              class="service-icon" />
+            <h3>Flyer & Poster Design</h3>
+            <p>Eye-catching print materials that demand attention. I design promotional pieces that convert viewers into
+              customers.</p>
+          </div>
+
+          <!-- Logo Design -->
+          <div class="service-card">
+            <img src="public/external/designideassvgrepocom14116-benb5.svg" alt="Logo Design Icon"
+              class="service-icon" />
+            <h3>Logo Design</h3>
+            <p>Strategic brand identities that capture your essence. I craft memorable logos that communicate your
+              values at a glance.</p>
+          </div>
+        </div>
+
+        <!-- More Services Button -->
+        <div class="more-services">
+          <a href="service.html" class="more-services-button" data-theme-link>
+            <span>More Services</span>
+            <img src="public/external/arrowrightnormal9111-nojh.svg" alt="Arrow" class="arrow-icon" />
+          </a>
+        </div>
+      </section>
+
+      <!-- About Me Section -->
+      <section id="about" class="about-me-section">
+        <div class="about-me-container">
+          <!-- Left Column: Image -->
+          <div class="about-me-image">
+            <img src="public/external/passporttransparent23790-ybs9-600w.png" alt="Irene Pedos" class="profile-image" />
+          </div>
+
+          <!-- Right Column: Content -->
+          <div class="about-me-content">
+            <h2>About Me</h2>
+            <p class="intro-text">I'm <strong>Irene Pedos ISHIMWE</strong>, Graphic Designer and Web Developer</p>
+            <p class="description">
+              A creative professional combining artistic vision with technical expertise. My approach merges aesthetics
+              with functionality to create meaningful digital experiences that solve real problems. With expertise in
+              multiple design disciplines and web technologies, I deliver comprehensive solutions that help businesses
+              establish strong digital presence.
+            </p>
+
+            <!-- Stats Section -->
+            <div class="stats">
+              <div class="stat-item">
+                <span class="stat-number">30+</span>
+                <span class="stat-label">Project Done</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">2</span>
+                <span class="stat-label">Years of Experience</span>
+              </div>
+            </div>
+
+            <!-- Download CV Button -->
+            <a href="/Images/digital_design (5).jpg"download class="download-cv-button">
+              <span>Download CV</span>
+              <img src="public/external/arrowrightnormal9513-oel8.svg" alt="Arrow" class="arrow-icon" />
+            </a>
+            <!-- More about me Button -->
+            <a href="aboutme.html" class="more-aboutme-button" data-theme-link>
+              <span>More About Me</span>
+              <img src="public/external/arrowrightnormal9111-nojh.svg" alt="Arrow" class="arrow-icon" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section id="projects" class="portfolio-section">
+        <div class="portfolio-container">
+          <h2>My Latest Project</h2>
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+              <img src="/Images/ad_design (3).jpg" alt="Project 1" class="project-image" />
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+              <img src="/Images/brand_design (5).jpg" alt="Project 2" class="project-image" />
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+              <img src="/Images/brand_design (7).jpg" alt="Project 3" class="project-image" />
+            </div>
+            <!-- Project 4 -->
+            <div class="project-card">
+              <img src="/Images/print_design (13).jpg" alt="Project 4" class="project-image" />
+            </div>
+          </div>
+          <!-- More Projects Button -->
+          <div class="more-projects">
+            <a href="portfolio.html" class="more-projects-button" onclick="navigateWithTheme()">
+              <span>More Projects</span>
+              <img src="public/external/arrowrightnormal9111-nojh.svg" alt="Arrow" class="arrow-icon" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section">
+        <div class="contact-container">
+          <!-- Contact Description -->
+          <div class="contact-description">
+            <h2>Get In Touch With Me</h2>
+            <p>
+              Ready to bring your vision to life? Let's collaborate on your next project. Whether you need a complete
+              brand identity, a custom website, or promotional materials, I'm here to help you make a lasting impression
+              in the digital world.
+            </p>
+          </div>
+
+          <!-- Contact Content (Form + Contact Info) -->
+          <div class="contact-content">
+            <!-- Contact Form -->
+            <form class="contact-form" action="https://formsubmit.co/irenepedos2@gmail.com" method="POST"
+              onsubmit="return handleFormSubmit(event)">
+              <!-- Required FormSubmit Fields -->
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="text" name="_honey" style="display:none">
+
+              <!-- Auto-responder (confirms submission) -->
+              <input type="hidden" name="_autoresponse" value="We received your message!">
+
+              <!-- Form Fields -->
+              <div class="input-field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="input-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="input-field">
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+              <div class="input-field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+
+              <button type="submit" id="submitBtn" class="submit-button">
+                Send Message
+              </button>
+            </form>
+
+            <!-- Success Popup -->
+            <div id="successPopup"
+              style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; padding:2rem; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.15); z-index:1000; text-align:center; max-width:90%;">
+              <svg style="width:48px;height:48px;color:#01C38E;margin-bottom:1rem;" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+              </svg>
+              <h3 style="margin:0 0 1rem;color:#333;">Message Sent!</h3>
+              <p style="margin:0 0 1.5rem;color:#555;">Check your email for confirmation</p>
+              <button onclick="closePopup()"
+                style="background:#6127FE;color:white;border:none;padding:0.5rem 1.5rem;border-radius:4px;cursor:pointer;font-size:1rem;">OK</button>
+            </div>
+            <div id="overlay"
+              style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:999;">
+            </div>
+            <!-- Contact Information -->
+            <div class="contact-details">
+              <h3>Contact Information</h3>
+              <div class="contact-info-item">
+                <span class="contact-info-label">Chat to me</span>
+                <span class="contact-info-value">I'm here to help bring your ideas to life.</span>
+                <span class="contact-info-value">ishimwepedos@gmail.com</span>
+              </div>
+              <div class="contact-info-item">
+                <span class="contact-info-label">Visit me</span>
+                <span class="contact-info-value">Available for in-person consultations.</span>
+                <span class="contact-info-value">Huye, Rwanda</span>
+              </div>
+              <div class="contact-info-item">
+                <span class="contact-info-label">Call me</span>
+                <span class="contact-info-value">Available weekdays from 8am to 6pm.</span>
+                <span class="contact-info-value">+250 791789430</span>
+              </div>
+              <div class="contact-info-item">
+                <span class="contact-info-label">Office Hours</span>
+                <span class="contact-info-value">Specify your availability by day and time in more detail.</span>
+                <span class="contact-info-value">Available Monday-Friday, 8am-6pm EAT (East Africa Time)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map Section -->
+      <section id="map" class="map-section">
+        <div class="map-container">
+          <h2>Where to Find Me</h2>
+          <div class="map-embed">
+            <!-- Embedded Google Map with your location -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.717671632676!2d29.74436931532449!3d-2.624249997060328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMzcnMjcuNCJTIDI5wrA0NCczNy43IkU!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+              width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer Section -->
+      <footer class="footer">
+        <div class="footer-content">
+          <!-- Information Column -->
+          <div class="footer-column">
+            <h3>Information</h3>
+            <ul>
+              <li><a href="#about">About Me</a></li>
+              <li><a href="#services">My Services</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact Me</a></li>
+              <li><a href="/Images/IT specialist CV-low quality.jpg" download>Download CV</a></li>
+            </ul>
+          </div>
+
+          <!-- Our Services Column -->
+          <div class="footer-column">
+            <h3>Our Services</h3>
+            <ul>
+              <li><a href="#services">Web Development</a></li>
+              <li><a href="#services">Logo Design</a></li>
+              <li><a href="#services">Video Editing</a></li>
+              <li><a href="#services">Flyer & Poster Design</a></li>
+            </ul>
+          </div>
+
+          <!-- Helpful Links Column -->
+          <div class="footer-column">
+            <h3>Helpful Links</h3>
+            <ul>
+              <li><a href="#services">Services</a></li>
+              <li><a href="javascript:void(0)" id="faqTrigger2" class="faq-trigger">FAQ</a></li>
+              <li><a href="javascript:void(0)" id="privacyTrigger2" class="privacy-trigger">Privacy Policy</a></li>
+              <li><a href="javascript:void(0)" id="termsTrigger2" class="terms-trigger">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Us Column -->
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul>
+              <li><a href="tel:+250791789430">+250 791789430</a></li>
+              <li><a href="mailto:ishimwepedos@gmail.com">ishimwepedos@gmail.com</a></li>
+              <li><a href="#map">Huye, Rwanda</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+          <div class="footer-logo">
+            <img src="/Images/IPD logo white.svg" alt="Logo" class="logo-dark" />
+            <img src="/Images/IPD logo blue.svg" alt="Logo" class="logo-light" />
+          </div>
+          <div class="footer-legal">
+            <span>© 2025 Irene Pedos. All Rights Reserved.</span>
+            <span class="faq-trigger-container">
+              <a href="javascript:void(0)" id="faqTrigger" class="faq-trigger">FAQ</a>
+            </span>
+            <span class="privacy-trigger-container">
+              <a href="javascript:void(0)" id="privacyTrigger" class="privacy-trigger">Privacy Policy</a>
+            </span>
+            <span class="terms-trigger-container">
+              <a href="javascript:void(0)" id="termsTrigger" class="terms-trigger">Terms & Conditions</a>
+            </span>
+          </div>
+        </div>
+      </footer>
+  </div>
+  <!-- FAQ Popup Overlay -->
+  <div id="faqOverlay" class="faq-overlay">
+    <div class="faq-popup">
+      <h2>Frequently Asked Questions</h2>
+
+      <!-- Web Development Questions -->
+      <div class="faq-item">
+        <div class="faq-question">What web development services do you offer?</div>
+        <div class="faq-answer">We offer full-stack web development including front-end (HTML, CSS, JavaScript) and
+          back-end (Node.js, PHP) development, as well as CMS solutions like WordPress.</div>
+      </div>
+
+      <!-- Logo Design Questions -->
+      <div class="faq-item">
+        <div class="faq-question">What's included in your logo design service?</div>
+        <div class="faq-answer">Our logo design package includes initial concepts, revisions, and final delivery in
+          multiple formats (PNG, JPG, SVG, AI). We provide 3 initial concepts and 2 rounds of revisions.</div>
+      </div>
+
+      <!-- Video Editing Questions -->
+      <div class="faq-item">
+        <div class="faq-question">What types of video editing do you specialize in?</div>
+        <div class="faq-answer">We specialize in promotional videos, social media content, YouTube videos, and corporate
+          presentations. We can handle color correction, audio enhancement, and special effects.</div>
+      </div>
+
+      <!-- Flyer & Poster Questions -->
+      <div class="faq-item">
+        <div class="faq-question">What file formats will I receive for my flyer/poster?</div>
+        <div class="faq-answer">We deliver print-ready PDFs (CMYK) for professional printing, as well as web-optimized
+          JPG/PNG versions for digital use. Source files (AI/PSD) are available upon request.</div>
+      </div>
+
+      <!-- General Questions -->
+      <div class="faq-item">
+        <div class="faq-question">How long does a typical project take?</div>
+        <div class="faq-answer">Timelines vary by project: logos take 3-7 days, websites 2-6 weeks, video editing 1-2
+          weeks, and flyers/posters 3-5 days. Rush services are available for an additional fee.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What are your payment terms?</div>
+        <div class="faq-answer">We require a 50% deposit to begin work, with the balance due upon completion. For larger
+          projects, we can arrange milestone payments.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do you offer revisions?</div>
+        <div class="faq-answer">Yes! We include 2 rounds of revisions in all our packages. Additional revisions can be
+          arranged for a small fee.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I get started?</div>
+        <div class="faq-answer">Simply contact us via email or phone to discuss your project. We'll provide a free
+          consultation and quote with no obligation.</div>
+      </div>
+
+      <button class="faq-close-btn" id="faqCloseBtn">Close FAQ</button>
+    </div>
+  </div>
+  <!-- Terms Popup Overlay -->
+  <div id="termsOverlay" class="terms-overlay">
+    <div class="terms-popup">
+      <h2>Terms and Conditions</h2>
+
+      <div class="terms-content">
+        <h3>1. Acceptance of Terms</h3>
+        <p>By accessing or using our portfolio services, you agree to be bound by these Terms and Conditions. If you do
+          not agree with any part of these terms, you may not use our services.</p>
+
+        <h3>2. Services Provided</h3>
+        <p>We offer the following services through our portfolio:</p>
+        <ul>
+          <li>Web Development</li>
+          <li>Logo Design</li>
+          <li>Video Editing</li>
+          <li>Flyer & Poster Design</li>
+        </ul>
+
+        <h3>3. Intellectual Property</h3>
+        <p>All content in this portfolio, including designs, text, graphics, and images, is our intellectual property
+          and protected by copyright laws. You may not reproduce, distribute, or create derivative works without our
+          express permission.</p>
+
+        <h3>4. Client Responsibilities</h3>
+        <p>Clients agree to:</p>
+        <ul>
+          <li>Provide accurate and complete project requirements</li>
+          <li>Make timely payments as agreed</li>
+          <li>Provide feedback within reasonable timeframes</li>
+          <li>Respect our creative process and expertise</li>
+        </ul>
+
+        <h3>5. Payment Terms</h3>
+        <p>Our standard payment terms require:</p>
+        <ul>
+          <li>50% deposit before work begins</li>
+          <li>50% balance upon project completion</li>
+          <li>Additional fees for rush services or excessive revisions</li>
+        </ul>
+
+        <h3>6. Revisions Policy</h3>
+        <p>We include 2 rounds of revisions in our standard packages. Additional revisions will be billed at our
+          standard hourly rate.</p>
+
+        <h3>7. Delivery Timeline</h3>
+        <p>Project timelines vary based on complexity. Typical delivery times are:</p>
+        <ul>
+          <li>Logos: 3-7 business days</li>
+          <li>Websites: 2-6 weeks</li>
+          <li>Video editing: 1-2 weeks</li>
+          <li>Flyers/posters: 3-5 business days</li>
+        </ul>
+
+        <h3>8. Limitation of Liability</h3>
+        <p>We shall not be liable for any indirect, incidental, or consequential damages arising from the use of our
+          services.</p>
+
+        <h3>9. Changes to Terms</h3>
+        <p>We reserve the right to modify these terms at any time. Continued use of our services constitutes acceptance
+          of the modified terms.</p>
+
+        <h3>10. Governing Law</h3>
+        <p>These terms shall be governed by and construed in accordance with the laws of Rwanda.</p>
+      </div>
+
+      <button class="terms-close-btn" id="termsCloseBtn">Close</button>
+    </div>
+  </div>
+  <!-- Privacy Policy Popup Overlay -->
+  <div id="privacyOverlay" class="privacy-overlay">
+    <div class="privacy-popup">
+      <h2>Privacy Policy</h2>
+
+      <div class="privacy-content">
+        <h3>1. Information We Collect</h3>
+        <p>We may collect the following types of information when you use our services:</p>
+        <ul>
+          <li>Contact information (name, email, phone number)</li>
+          <li>Project details and requirements</li>
+          <li>Communication records</li>
+          <li>Payment information (processed securely through third-party providers)</li>
+        </ul>
+
+        <h3>2. How We Use Your Information</h3>
+        <p>Your information is used to:</p>
+        <ul>
+          <li>Provide and improve our services</li>
+          <li>Communicate about your projects</li>
+          <li>Process transactions</li>
+          <li>Respond to inquiries</li>
+          <li>Comply with legal obligations</li>
+        </ul>
+
+        <h3>3. Data Protection</h3>
+        <p>We implement appropriate security measures including:</p>
+        <ul>
+          <li>Secure servers and encryption</li>
+          <li>Limited access to personal data</li>
+          <li>Regular security assessments</li>
+        </ul>
+
+        <h3>4. Data Retention</h3>
+        <p>We retain personal data only as long as necessary for:</p>
+        <ul>
+          <li>Ongoing projects and follow-ups</li>
+          <li>Legal and accounting requirements</li>
+          <li>Portfolio purposes (with client consent)</li>
+        </ul>
+
+        <h3>5. Your Rights</h3>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Access your personal data</li>
+          <li>Request correction or deletion</li>
+          <li>Object to processing</li>
+          <li>Withdraw consent</li>
+        </ul>
+
+        <h3>6. Third-Party Services</h3>
+        <p>We may use trusted third-party services for:</p>
+        <ul>
+          <li>Payment processing</li>
+          <li>Cloud storage</li>
+          <li>Communication tools</li>
+          <li>Analytics (anonymous data only)</li>
+        </ul>
+
+        <h3>7. Cookies and Tracking</h3>
+        <p>Our website may use cookies for:</p>
+        <ul>
+          <li>Basic functionality</li>
+          <li>Analytics (anonymous)</li>
+          <li>No third-party tracking cookies are used</li>
+        </ul>
+
+        <h3>8. Changes to This Policy</h3>
+        <p>We may update this policy periodically. Significant changes will be communicated to current clients.</p>
+
+        <h3>9. Contact Us</h3>
+        <p>For privacy-related inquiries, please contact us at:</p>
+        <ul>
+          <li>Email: ishimwepedos@gmail.com</li>
+          <li>Phone: +250 791789430</li>
+          <li>Address: Huye, Rwanda</li>
+        </ul>
+      </div>
+
+      <button class="privacy-close-btn" id="privacyCloseBtn">I Understand</button>
+    </div>
+  </div>
+  <script>
+    // Form Submission Handler
+    async function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const submitBtn = document.getElementById('submitBtn');
+
+      // Disable button to prevent double submission
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Sending...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          showPopup();
+          form.reset();
+          // Clear URL to prevent resubmission on refresh
+          window.history.replaceState(null, '', window.location.pathname);
+        } else {
+          throw new Error('Formsubmit error');
+        }
+      } catch (error) {
+        console.error('Submission error:', error);
+        alert('Failed to send. Please email us directly at irenepedos2@gmail.com');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send Message';
+      }
+    }
+
+    // Popup Controls
+    function showPopup() {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById('successPopup').style.display = 'block';
+      // Auto-close after 5 seconds
+      setTimeout(closePopup, 5000);
+    }
+
+    function closePopup() {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('successPopup').style.display = 'none';
+    }
+    // Simulate loading
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        document.querySelector('.loading-bar').style.opacity = '0';
+        setTimeout(function () {
+          document.querySelector('.loading-bar').style.display = 'none';
+        }, 500);
+      }, 1000);
+    });
+  </script>
+</body>
+
+</html>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.indexdarkmode-nav-links');
+
+    hamburgerMenu.addEventListener('click', function () {
+      navLinks.classList.toggle('active');
+      // Animate hamburger menu to "X"
+      hamburgerMenu.children[0].classList.toggle('rotate-45');
+      hamburgerMenu.children[1].classList.toggle('opacity-0');
+      hamburgerMenu.children[2].classList.toggle('rotate--45');
+    });
+  });
+  // FAQ Popup Functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get elements
+    const faqTrigger = document.getElementById('faqTrigger');
+    const faqTrigger2 = document.getElementById('faqTrigger2');
+    const faqOverlay = document.getElementById('faqOverlay');
+    const faqCloseBtn = document.getElementById('faqCloseBtn');
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    // Toggle FAQ overlay
+    function toggleFAQ(e) {
+      e.preventDefault();
+      faqOverlay.classList.toggle('active');
+    }
+
+    // Event listeners
+    faqTrigger.addEventListener('click', toggleFAQ);
+    faqTrigger2.addEventListener('click', toggleFAQ);
+    faqCloseBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      faqOverlay.classList.remove('active');
+    });
+
+    // Close when clicking outside popup
+    faqOverlay.addEventListener('click', function (e) {
+      if (e.target === faqOverlay) {
+        faqOverlay.classList.remove('active');
+      }
+    });
+
+    // Toggle FAQ answers
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const isActive = question.classList.contains('active');
+
+        // Close all other answers
+        document.querySelectorAll('.faq-question.active').forEach(activeQuestion => {
+          if (activeQuestion !== question) {
+            activeQuestion.classList.remove('active');
+            activeQuestion.nextElementSibling.style.display = 'none';
+          }
+        });
+
+        // Toggle current answer
+        question.classList.toggle('active');
+        answer.style.display = isActive ? 'none' : 'block';
+      });
+    });
+  });
+
+  // Terms Popup Functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get elements
+    const termsTrigger = document.getElementById('termsTrigger');
+    const termsTrigger2 = document.getElementById('termsTrigger2');
+    const termsOverlay = document.getElementById('termsOverlay');
+    const termsCloseBtn = document.getElementById('termsCloseBtn');
+
+    // Toggle Terms overlay
+    function toggleTerms(e) {
+      e.preventDefault();
+      termsOverlay.classList.toggle('active');
+    }
+
+    // Event listeners
+    termsTrigger.addEventListener('click', toggleTerms);
+    termsTrigger2.addEventListener('click', toggleTerms);
+    termsCloseBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      termsOverlay.classList.remove('active');
+    });
+
+    // Close when clicking outside popup
+    termsOverlay.addEventListener('click', function (e) {
+      if (e.target === termsOverlay) {
+        termsOverlay.classList.remove('active');
+      }
+    });
+  });
+
+  // Privacy Policy Popup Functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get elements
+    const privacyTrigger = document.getElementById('privacyTrigger');
+    const privacyTrigger2 = document.getElementById('privacyTrigger2');
+    const privacyOverlay = document.getElementById('privacyOverlay');
+    const privacyCloseBtn = document.getElementById('privacyCloseBtn');
+
+    // Toggle Privacy overlay
+    function togglePrivacy(e) {
+      e.preventDefault();
+      privacyOverlay.classList.toggle('active');
+      document.body.style.overflow = privacyOverlay.classList.contains('active') ? 'hidden' : '';
+    }
+
+    // Event listeners
+    privacyTrigger.addEventListener('click', togglePrivacy);
+    privacyTrigger2.addEventListener('click', togglePrivacy);
+    privacyCloseBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      privacyOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    // Close when clicking outside popup
+    privacyOverlay.addEventListener('click', function (e) {
+      if (e.target === privacyOverlay) {
+        privacyOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close with Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && privacyOverlay.classList.contains('active')) {
+        privacyOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+</script>
