@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="portfolio.css"> <!-- Link to the Portfolio CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Font Awesome -->
+</head>
+
+<body>
+  <script src="theme-toggle.js"></script>
+  <div class="loading-bar">
+    <div class="loading-progress"></div>
+  </div>
+  <!-- Back Button -->
+  <div class="back-button-container">
+    <a href="index.html" class="back-button">
+      <i class="fas fa-arrow-left"></i> <!-- Font Awesome back arrow icon -->
+      <span>Back to Home</span>
+    </a>
+  </div>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="portfolio-container">
+      <h2>My Portfolio</h2>
+      <p>Explore my work across various categories, including Branding & Identity, Digital Design, Print Design,
+        Advertising & Campaigns, and Packaging Design.</p>
+
+      <!-- Filter Buttons -->
+      <div class="filter-buttons">
+        <button class="filter-button active" data-filter="all">All</button>
+        <button class="filter-button" data-filter="branding">Branding & Identity</button>
+        <button class="filter-button" data-filter="digital">Digital Design</button>
+        <button class="filter-button" data-filter="print">Print Design</button>
+        <button class="filter-button" data-filter="advertising">Advertising & Campaigns</button>
+        <button class="filter-button" data-filter="packaging">Packaging Design</button>
+      </div>
+
+      <!-- Main Projects Grid -->
+      <div class="main-projects-grid" id="main-projects-grid">
+        <h3 id="main-projects-title">Projects</h3>
+        <div class="projects-grid"></div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="page-button" data-page="1">1</button>
+          <button class="page-button" data-page="2">2</button>
+          <button class="page-button" data-page="3">3</button>
+          <!-- Add more pages as needed -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Filtering, Pagination, and Navigation -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const filterButtons = document.querySelectorAll(".filter-button");
+      const mainProjectsGrid = document.getElementById("main-projects-grid");
+      const projectsGrid = document.querySelector(".projects-grid");
+      const mainProjectsTitle = document.getElementById("main-projects-title");
+      const pageButtons = document.querySelectorAll(".page-button");
+      const projectsPerPage = 5; // Number of projects per page
+      let currentFilter = "all";
+      let currentPage = 1;
+
+      // Sample projects data (replace with your actual projects)
+      const projectsData = {
+        all: [
+          // Branding Projects (20 items - note duplicates in original list)
+          { image: "/Images/brand_design (1).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (2).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (3).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (4).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (5).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (6).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (7).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (8).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (9).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (10).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (11).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (12).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (13).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (14).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (15).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (16).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (17).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (18).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (19).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (20).jpg", title: "Branding Project", category: "branding" },
+
+          // Digital Design Projects (9 items)
+          { image: "/Images/digital_design (1).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (2).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (3).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (4).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (5).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (6).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (7).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (8).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (9).jpg", title: "Digital Project", category: "digital" },
+
+          // Print Design Projects (20 items)
+          { image: "/Images/print_design (1).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (2).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (3).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (4).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (5).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (6).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (7).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (8).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (9).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (10).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (11).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (12).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (13).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (14).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (15).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (16).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (17).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (18).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (19).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (20).jpg", title: "Print Project", category: "print" },
+
+          // Advertising Projects (16 items)
+          { image: "/Images/ad_design (1).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (2).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (3).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (4).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (5).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (6).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (7).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (8).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (9).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (10).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (11).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (12).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (13).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (14).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (15).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (16).jpg", title: "Advertising Project", category: "advertising" },
+
+          // Packaging Design Projects (5 items)
+          { image: "/Images/packaging_design (1).jpg", title: "Packaging Project", category: "packaging" },
+          { image: "/Images/packaging_design (2).jpg", title: "Packaging Project", category: "packaging" },
+          { image: "/Images/packaging_design (3).jpg", title: "Packaging Project", category: "packaging" },
+          { image: "/Images/packaging_design (4).jpg", title: "Packaging Project", category: "packaging" },
+          { image: "/Images/packaging_design (5).jpg", title: "Packaging Project", category: "packaging" }
+        ],
+        branding: [
+          { image: "/Images/brand_design (1).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (2).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (3).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (4).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (5).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (6).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (7).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (8).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (9).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (10).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (11).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (12).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (13).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (14).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (15).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (16).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (17).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (18).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (19).jpg", title: "Branding Project", category: "branding" },
+          { image: "/Images/brand_design (20).jpg", title: "Branding Project", category: "branding" },
+          // Add more projects...
+        ],
+        digital: [
+          { image: "/Images/digital_design (1).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (2).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (3).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (4).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (5).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (6).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (7).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (8).jpg", title: "Digital Project", category: "digital" },
+          { image: "/Images/digital_design (9).jpg", title: "Digital Project", category: "digital" },
+          // Add more projects...
+        ],
+        print: [
+          { image: "/Images/print_design (1).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (2).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (3).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (4).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (5).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (6).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (7).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (8).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (9).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (10).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (11).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (12).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (13).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (14).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (15).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (16).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (17).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (18).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (19).jpg", title: "Print Project", category: "print" },
+          { image: "/Images/print_design (20).jpg", title: "Print Project", category: "print" },
+          // Add more projects...
+        ],
+        advertising: [
+          { image: "/Images/ad_design (1).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (2).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (3).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (4).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (5).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (6).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (7).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (8).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (9).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (10).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (11).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (12).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (13).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (14).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (15).jpg", title: "Advertising Project", category: "advertising" },
+          { image: "/Images/ad_design (16).jpg", title: "Advertising Project", category: "advertising" },
+          // Add more projects...
+        ],
+        packaging: [
+          { image: "/Images/packaging_design (1).jpg", title: "Packaging Project", category: "packaging" },
+          { image: "/Images/packaging_design (2).jpg", title: "Packaging Project", category: "packaging" },
+          { image: "/Images/packaging_design (3).jpg", title: "Packaging Project", category: "packaging" },
+          { image: "/Images/packaging_design (4).jpg", title: "Packaging Project", category: "packaging" },
+          { image: "/Images/packaging_design (5).jpg", title: "Packaging Project", category: "packaging" },
+          // Add more projects...
+        ],
+      };
+
+      // Load projects for a specific category
+      const loadProjects = (category) => {
+        const projects = projectsData[category] || [];
+        projectsGrid.innerHTML = ""; // Clear existing projects
+
+        projects.forEach((project) => {
+          const projectCard = document.createElement("div");
+          projectCard.classList.add("project-card");
+          if (category === "all") {
+            // Add overlay for "All" filter
+            projectCard.innerHTML = `
+              <img src="${project.image}" alt="${project.title}" class="project-image" />
+              <div class="project-overlay">
+                <h3>${project.title}</h3>
+                <p>Click to view ${project.category} projects</p>
+              </div>
+            `;
+            projectCard.addEventListener("click", () => {
+              // Redirect to the corresponding category
+              const categoryButton = document.querySelector(`.filter-button[data-filter="${project.category}"]`);
+              categoryButton.click();
+            });
+          } else {
+            // No overlay for other filters
+            projectCard.innerHTML = `
+              <img src="${project.image}" alt="${project.title}" class="project-image" />
+            `;
+          }
+          projectsGrid.appendChild(projectCard);
+        });
+
+        mainProjectsTitle.textContent = `${category === "all" ? "All" : category} Projects`;
+        mainProjectsGrid.style.display = "block"; // Show the main projects grid
+      };
+
+      // Handle filter button clicks
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Remove active class from all buttons
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+          // Add active class to the clicked button
+          button.classList.add("active");
+
+          currentFilter = button.getAttribute("data-filter");
+          loadProjects(currentFilter);
+        });
+      });
+
+      // Handle page button clicks
+      pageButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          currentPage = parseInt(button.getAttribute("data-page"));
+          // Implement pagination logic here (if needed)
+        });
+      });
+
+      // Initialize
+      loadProjects(currentFilter);
+    });
+    // Simulate loading
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        document.querySelector('.loading-bar').style.opacity = '0';
+        setTimeout(function () {
+          document.querySelector('.loading-bar').style.display = 'none';
+        }, 500);
+      }, 1000);
+    });
+    // Initialize theme on portfolio page
+    document.addEventListener('DOMContentLoaded', function () {
+      const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+      document.body.classList.add(savedTheme);
+
+      // Update toggle if exists on this page
+      if (typeof themeFunctions !== 'undefined') {
+        themeFunctions.updateToggleVisuals(savedTheme);
+      }
+    });
+  </script>
+</body>
+
+</html>
